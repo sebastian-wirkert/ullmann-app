@@ -14,24 +14,51 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import AppHeader from './src/AppHeader';
-import {getColors, isDarkMode} from './src/Colors'
-import { Card } from './src/components';
-import Styles from './src/Styles'
+import {getColors, isDarkMode} from './src/Colors';
+import {Card} from './src/components';
+import Styles from './src/Styles';
 
-
-const App = () => {
-  const colors = getColors()
+function bar() {
+  const colors = getColors();
   return (
-    <SafeAreaView style={{...Styles.page, ...colors.page}}> 
-      <StatusBar barStyle={isDarkMode() ? 'light-content' : 'dark-content'} />
-      <ScrollView>
+    <ScrollView>
       <AppHeader />
       <Card>
         <Text style={colors.text}>Hello babe how are you</Text>
       </Card>
+    </ScrollView>
+  );
+}
 
-      </ScrollView>
+function blasen() {
+  const colors = getColors();
+  return (
+    <ScrollView>
+      <AppHeader />
+      <Card>
+        <Text style={colors.text}>Hello blasen how are you</Text>
+      </Card>
+    </ScrollView>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
+  const colors = getColors();
+  return (
+    <SafeAreaView style={{...Styles.page, ...colors.page}}>
+      <StatusBar barStyle={isDarkMode() ? 'light-content' : 'dark-content'} />
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="bar" component={bar} />
+          <Tab.Screen name="blasen" component={blasen} />
+        </Tab.Navigator>
+      </NavigationContainer>
     </SafeAreaView>
   );
 };
