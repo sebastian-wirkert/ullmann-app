@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {View} from 'react-native';
 
-import {OurText} from './OurText'
+import {OurText} from './OurText';
+import {getColors} from '../Colors';
+import Styles from '../Styles';
 
-// Create a component
-const Header = (props) => {
-    const { textStyle } = styles;
+const Header = props => {
+  const colors = getColors();
+  var {header} = Styles;
 
-    return (
-        <OurText style={textStyle}>{props.children}</OurText>
-    );
-};
-
-const styles = {
-    textStyle: {
-        fontWeight: 'bold',
-        color: '#000000'
-    }
+  return (
+    <View style={{...header}}>
+      <OurText style={{...colors.header, ...header}}>{props.children}</OurText>
+    </View>
+  );
 };
 
 // Make available to other components
-export { Header };
+export {Header};

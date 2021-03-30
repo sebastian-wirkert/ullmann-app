@@ -1,41 +1,42 @@
-
-import {
-  StyleSheet,
-  useColorScheme
-} from 'react-native';
+import {DrawerLayoutAndroid, StyleSheet, useColorScheme} from 'react-native';
 
 const darkStyles = StyleSheet.create({
   page: {
-    backgroundColor: '#000000'
+    backgroundColor: '#000000',
   },
   container: {
-    backgroundColor: '#03488B'
+    backgroundColor: '#03488B',
   },
   text: {
-    color: '#FFFFFF'
-  }
+    color: '#FFFFFF',
+  },
+  header: {
+    color: '#FFFFFF',
+  },
 });
 
 const lightStyles = StyleSheet.create({
   page: {
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FAFAFA',
   },
   container: {
-    backgroundColor: '#03488B'
+    backgroundColor: '#03488B',
   },
   text: {
-    color: '#FFFFFF'
-  }
+    color: '#FFFFFF',
+  },
+  header: {
+    color: '#000000',
+  },
 });
 
 function isDarkMode() {
-  return useColorScheme() === 'dark'
+  return useColorScheme() === 'dark';
 }
 
 function getColors() {
-  if (isDarkMode())
-    return darkStyles
-  return lightStyles
+  if (isDarkMode()) return darkStyles;
+  return lightStyles;
 }
 
-export {getColors, isDarkMode}
+export {getColors, isDarkMode};
