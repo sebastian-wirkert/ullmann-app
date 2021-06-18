@@ -10,6 +10,9 @@ const darkStyles = StyleSheet.create({
   text: {
     color: '#FFFFFF',
   },
+  input: {
+    color: '#000000',
+  },
   header: {
     color: '#FFFFFF',
   },
@@ -24,6 +27,9 @@ const lightStyles = StyleSheet.create({
   },
   text: {
     color: '#FFFFFF',
+  },
+  input: {
+    color: '#000000',
   },
   header: {
     color: '#000000',

@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
 
+const standardFontSize = 16;
+
 const styles = StyleSheet.create({
   page: {
     flex: 1,
@@ -11,9 +13,17 @@ const styles = StyleSheet.create({
     padding: 10,
     //borderRadius: 10
   },
-  text: {},
+  input: {
+    backgroundColor: 'white',
+    fontSize: standardFontSize,
+    flex: 2,
+  },
+  text: {
+    fontSize: standardFontSize,
+  },
   header: {
-    padding: 5,
+    padding: 10,
+    fontSize: standardFontSize,
     fontWeight: 'bold',
   },
 });

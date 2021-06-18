@@ -10,9 +10,9 @@ const Header = props => {
   var {header} = Styles;
 
   return (
-    <View style={{...header}}>
-      <OurText style={{...colors.header, ...header}}>{props.children}</OurText>
-    </View>
+    <OurText style={{...colors.header, ...header, ...props.style}}>
+      {props.children}
+    </OurText>
   );
 };
 

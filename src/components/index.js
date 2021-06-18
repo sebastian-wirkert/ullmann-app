@@ -3,3 +3,4 @@ export * from './OurText';
 export * from './Header';
 export * from './Card';
 export * from './OurIcon';
+export * from './NumberInput';

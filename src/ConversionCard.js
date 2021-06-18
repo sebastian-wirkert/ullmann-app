@@ -1,13 +1,17 @@
 import React from 'react';
+import {View} from 'react-native';
 
 import {Card, Header} from './components';
+import styles from './Styles';
 
 const ConversionCard = props => {
-  const {};
+  const {header} = props;
   return (
-    <View>
-      <Header>Ullmann</Header>
-      <Card></Card>
+    <View style={{paddingBottom: 30}}>
+      <Header style={{padding: 0, paddingLeft: styles.container.marginLeft}}>
+        {header}
+      </Header>
+      <Card glue>{props.children}</Card>
     </View>
   );
 };
