@@ -1,31 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, TextInput} from 'react-native';
 
 import {NumberInput, OurText} from '../components';
 import AppHeader from '../AppHeader';
 import AppView from '../AppView';
-import {getColors} from '../Colors';
 import ConversionCard from '../ConversionCard';
-import styles from '../Styles';
 
 function Units(props) {
-  const colors = getColors();
+  const [pascalValue, setPascalValue] = useState('');
+  const [barValue, setBarValue] = useState('');
+
+  const [mmValue, setMMValue] = useState('');
+  const [inchValue, setInchValue] = useState('');
+
   return (
     <AppView>
       <ScrollView>
         <AppHeader />
         <ConversionCard header={'Pascal/Bar'}>
-          <OurText>Hello babe how are you</OurText>
-          <NumberInput
-            style={{
-              color: colors.input.color,
-              ...styles.input,
-            }}
-            placeholderTextColor={'gray'}
-          />
+          <OurText>pascal</OurText>
+          <NumberInput value={pascalValue} setValue={setPascalValue} />
+          <OurText>bar</OurText>
+          <NumberInput value={barValue} setValue={setBarValue} />
         </ConversionCard>
         <ConversionCard header={'mm/inch Wassersäule'}>
-          <OurText>Hello babe how are you</OurText>
+          <OurText>mm</OurText>
+          <NumberInput value={mmValue} setValue={setMMValue} />
+          <OurText>inch</OurText>
+          <NumberInput value={inchValue} setValue={setInchValue} />
         </ConversionCard>
       </ScrollView>
     </AppView>

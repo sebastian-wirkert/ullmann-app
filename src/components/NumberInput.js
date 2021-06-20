@@ -10,9 +10,7 @@ const validNumber = decimalSeperator === '.' ? /^\d+\.?\d*$/ : /^\d+\,?\d*$/;
 // Create a component
 function NumberInput(props) {
   const colors = getColors();
-  const {style} = props;
-
-  const [inputValue, setInputValue] = useState('');
+  const {style, value, setValue} = props;
 
   return (
     <TextInput
@@ -25,9 +23,9 @@ function NumberInput(props) {
       placeholderTextColor={'gray'}
       placeholder={`1${decimalSeperator}0`}
       onChangeText={text =>
-        validNumber.test(text) ? setInputValue(text) : setInputValue('')
+        validNumber.test(text) ? setValue(text) : setValue('')
       }
-      value={inputValue}
+      value={value}
       maxLength={10}
     />
   );
